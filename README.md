@@ -1,7 +1,44 @@
+* [internal_sorting_algorithm](#internalsortingalgorithm)
+* [Sorting Algorithms in C](#Sorting-Algorithms-in-C)
+* [Unit Test](#Unit-Test)
+* [Speed Test](#Speed-Test)
+
 # internal_sorting_algorithm
 Internal sorting algorithm implementated by C, tested and compared by Python.
 
-# unit test
+# Sorting Algorithms in C
+
+All sorting functions are thread-safe and the input array would be kept
+untouched while there is an error.
+
+``` c
+# $ cat sort.h
+#ifndef __SORT_H__
+#define __SORT_H__
+
+
+/* thread-safe sorting algorithms for int array */
+void bubble(int a[], size_t n);
+void selects(int a[], size_t n);
+void insert(int a[], size_t n);
+void insert2(int a[], size_t n);
+void binsert(int a[], size_t n);
+void binsert2(int a[], size_t n);
+void shell(int a[], size_t n);
+void shell(int a[], size_t n);
+void heapify(int a[], size_t n);
+void quick(int a[], size_t li, size_t ri);
+int merge(int a[], size_t n);
+int merge_r(int a[], size_t li, size_t ri);
+int radix(int a[], size_t n);
+int btree(int a[], size_t n);
+int count(int a[], size_t n, size_t mem_limit);
+
+
+#endif
+```
+
+# Unit Test
 
 ``` shell
 $ python3 utest.py -v
@@ -44,7 +81,7 @@ Ran 22 tests in 12.844s
 OK
 ```
 
-# speed test
+# Speed Test
 
 ``` shell
 $ python3 test_sort_time.py
